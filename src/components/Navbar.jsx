@@ -6,6 +6,7 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import FitnessCenterIcon from '@mui/icons-material/FitnessCenter';
+import { Link } from 'react-router-dom';
 
 export default function Navbar() {
   return (
@@ -31,47 +32,58 @@ export default function Navbar() {
                 display: { md: 'flex' },
                 fontFamily: 'monospace',
                 fontWeight: 700,
-                letterSpacing: '.3rem',
+                letterSpacing:{ xs:'.2rem', sm: '.3rem'},
                 color: 'white.main',
                 textDecoration: 'none',
                 flexGrow: 1
             }}
             >
-            TRACKFIT
+            <Box component="span" sx={{color:"gold.main"}}>TRACK</Box>FIT
             </Typography>
-            <Button component="a" href="/home" color="inherit">
-                <Typography 
-                    sx={{
-                    "&:hover": { color: 'gold.main' },
-                    fontFamily: 'monospace',
-                    letterSpacing: '.3rem',
-                    fontWeight: 700,
-                }}>
-                    Home
-                </Typography>
-            </Button>
-            <Button component="a" href="/about" color="inherit">
-                <Typography 
-                    sx={{
-                    "&:hover": { color: 'gold.main' },
-                    fontFamily: 'monospace',
-                    letterSpacing: '.3rem',
-                    fontWeight: 700,
-                }}>
-                    ABOUT
-                </Typography>
-            </Button>
-            <Button component="a" href="/sign-in" color="inherit">
-                <Typography 
-                    sx={{
-                    "&:hover": { color: 'gold.main' },
-                    fontFamily: 'monospace',
-                    letterSpacing: '.3rem',
-                    fontWeight: 700,
-                }}>
-                    Login
-                </Typography>
-          </Button>
+            <Link to="/home" >
+                <Button color="inherit">
+                    <Typography
+                        sx={{
+                        display: { xs:'none',sm : 'inline'} ,
+                        "&:hover": { color: 'gold.main' },
+                        fontFamily: 'monospace',
+                        letterSpacing: '.3rem',
+                        fontWeight: 700,
+                        color: "white.main"
+                    }}>
+                        Home
+                    </Typography>
+                </Button>
+            </Link>
+            <Link to="/about">
+                <Button  color="inherit">
+                    <Typography
+                        sx={{
+                            display: { xs:'none',sm : 'inline'} ,
+                            "&:hover": { color: 'gold.main' },
+                            fontFamily: 'monospace',
+                            letterSpacing: '.3rem',
+                            fontWeight: 700,
+                            color: "white.main"
+                        }}>
+                        ABOUT
+                    </Typography>
+                </Button>
+            </Link>
+            <Link to="/sign-in">
+                <Button component="a" href="/sign-in" color="inherit">
+                    <Typography
+                        sx={{
+                            "&:hover": { color: 'gold.main' },
+                            fontFamily: 'monospace',
+                            letterSpacing: '.3rem',
+                            fontWeight: 700,
+                            color: "white.main"
+                        }}>
+                        Login
+                    </Typography>
+                </Button>
+            </Link>
         </Toolbar>
       </AppBar>
     </Box>

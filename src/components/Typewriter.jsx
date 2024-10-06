@@ -1,7 +1,6 @@
 import React from 'react';
 import { Box, Typography } from '@mui/material';
 import Typewriter from 'typewriter-effect';
-import { useState } from 'react';
 
 const TypewriterComponent = () => {
   const stringToType = "PUSH TRACK TRIUMPH";
@@ -26,6 +25,8 @@ const TypewriterComponent = () => {
           color: 'white',
           textAlign: "start",
           fontSize: { xs: '2rem', sm: '3rem', md: '4rem', lg: '6rem' }, // Responsive font sizes
+          fontFamily: 'monospace',
+          letterSpacing: '.1rem'
         }}
       >
         <Typewriter
