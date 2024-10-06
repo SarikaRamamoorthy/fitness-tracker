@@ -1,5 +1,5 @@
 // import Typewriter from "typewriter-effect"
-import TypewriterComponent from "../src/components/Typewriter"
+import TypewriterComponent from "../components/Typewriter"
 import { Box } from '@mui/material';
 
 export default function Home() {

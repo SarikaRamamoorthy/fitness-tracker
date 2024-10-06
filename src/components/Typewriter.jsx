@@ -57,7 +57,7 @@ const TypewriterComponent = () => {
             // Start typing the words, loop, and delete
             typewriter
             // .pauseFor(500)
-            .typeString(`<span style="color: white;">${splitString[1]}</span>`)
+            .typeString(`<span style="color: #f0c451;">${splitString[1]}</span>`)
             .start(); // Starts the typewriter effect with the same pattern
         }}
         />
