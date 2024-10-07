@@ -39,7 +39,7 @@ export default function SignIn() {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 />
-                <Button component="a" href="/home" type='submit'
+                <Button type='submit'
                 sx={{
                     borderRadius : "0.5rem",
                     backgroundColor: "gold.main",

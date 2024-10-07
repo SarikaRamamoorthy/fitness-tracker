@@ -4,45 +4,59 @@ import Typography from '@mui/material/Typography';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 
-export default function SignIn() {
+export default function SignUp() {
 
-    const [name, setName] = useState('');
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-    // console.log(email);
-    // console.log(password);
+    const [formData, setFormData] = useState({
+        name: "",   
+        email: "",  
+        password: ""
+    });
+
+    console.log(formData);
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        console.log("form submitted");
+    }
+    
+    const handleChange = (e) => {
+        setFormData({
+            ...formData,
+            [e.target.id] : e.target.value
+        })
+    }
 
     return (
         <Box component="div" style={{ "display" : "flex", "alignItems" : "center",  "marginTop": "6rem", "marginRight" : "5%"}}
         sx={{"flexDirection" : {xs : "column", md : "row"}, "gap" : {xs : "3rem"}}}>
         <Box component="div" sx={{"width" : {xs : "100%", md : "50%"}}}>
-            <Box component="form" action="" style={{"display": "flex", "flexDirection" : "column", "gap" : "2rem", "justifyContent" : "center", "alignItems" : "center"}}>
+            <Box component="form" onSubmit={handleSubmit} action="" style={{"display": "flex", "flexDirection" : "column", "gap" : "2rem", "justifyContent" : "center", "alignItems" : "center"}}>
                 <Typography variant='h5' sx={{color : "white.main",fontWeight: 700,}}>SIGN UP</Typography>
                 <TextField id="name" label="Name" variant="filled" type='text' required
                 sx={{
                     backgroundColor: "white.main",
                     width : "50%"
                 }} 
-                value={name}
-                onChange={(e) => setEmail(e.name.value)}
+                value={formData.name}
+                onChange={handleChange}
                 />
                 <TextField id="email" label="Email" variant="filled" type='email' required
                 sx={{
                     backgroundColor: "white.main",
                     width : "50%"
                 }} 
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                value={formData.email}
+                onChange={handleChange}
                 />
                 <TextField id="password" label="Password" variant="filled" type='password' required
                 sx={{
                     backgroundColor: "white.main",
                     width: "50%"
                 }}
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
+                value={formData.password}
+                onChange={handleChange}
                 />
-                <Button component="a" href="/home" type='submit'
+                <Button type='submit'
                 sx={{
                     borderRadius : "0.5rem",
                     backgroundColor: "gold.main",

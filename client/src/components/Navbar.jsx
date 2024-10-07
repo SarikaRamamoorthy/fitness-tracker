@@ -40,10 +40,22 @@ export default function Navbar() {
             >
             <Box component="span" sx={{color:"gold.main"}}>TRACK</Box>FIT
             </Typography>
-            <Link to="/home" >
-                <Button color="inherit">
-                    <Typography
-                        sx={{
+            <Button component={Link} to="/home" color="inherit">
+                <Typography
+                    sx={{
+                    display: { xs:'none',sm : 'inline'} ,
+                    "&:hover": { color: 'gold.main' },
+                    fontFamily: 'monospace',
+                    letterSpacing: '.3rem',
+                    fontWeight: 700,
+                    color: "white.main"
+                }}>
+                    Home
+                </Typography>
+            </Button>
+            <Button component={Link} to="/about" color="inherit">
+                <Typography
+                    sx={{
                         display: { xs:'none',sm : 'inline'} ,
                         "&:hover": { color: 'gold.main' },
                         fontFamily: 'monospace',
@@ -51,39 +63,21 @@ export default function Navbar() {
                         fontWeight: 700,
                         color: "white.main"
                     }}>
-                        Home
-                    </Typography>
-                </Button>
-            </Link>
-            <Link to="/about">
-                <Button  color="inherit">
-                    <Typography
-                        sx={{
-                            display: { xs:'none',sm : 'inline'} ,
-                            "&:hover": { color: 'gold.main' },
-                            fontFamily: 'monospace',
-                            letterSpacing: '.3rem',
-                            fontWeight: 700,
-                            color: "white.main"
-                        }}>
-                        ABOUT
-                    </Typography>
-                </Button>
-            </Link>
-            <Link to="/sign-in">
-                <Button component="a" href="/sign-in" color="inherit">
-                    <Typography
-                        sx={{
-                            "&:hover": { color: 'gold.main' },
-                            fontFamily: 'monospace',
-                            letterSpacing: '.3rem',
-                            fontWeight: 700,
-                            color: "white.main"
-                        }}>
-                        Login
-                    </Typography>
-                </Button>
-            </Link>
+                    ABOUT
+                </Typography>
+            </Button>
+            <Button component={Link} to="/sign-in" color="inherit">
+                <Typography
+                    sx={{
+                        "&:hover": { color: 'gold.main' },
+                        fontFamily: 'monospace',
+                        letterSpacing: '.3rem',
+                        fontWeight: 700,
+                        color: "white.main"
+                    }}>
+                    Login
+                </Typography>
+            </Button>
         </Toolbar>
       </AppBar>
     </Box>

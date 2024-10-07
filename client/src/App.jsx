@@ -33,8 +33,8 @@ function App() {
 
     return (
         <div style={{"backgroundColor": theme.palette.primary.main, "minHeight" : "100vh"}}>
-            <CssBaseline>
                 <ThemeProvider theme = {theme}>
+                    <CssBaseline/>
                     <BrowserRouter>
                         <Navbar/>
                         <Routes>
@@ -46,7 +46,6 @@ function App() {
                         </Routes>
                     </BrowserRouter>
                 </ThemeProvider>
-            </CssBaseline>
         </div>
     )
 }
